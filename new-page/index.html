@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webinar: Precision Flowline Encore from PWX Houston</title>
+<meta name="description" content="One of the most attended sessions at PWX 2026 Houston is back. Live webinar, Wednesday, October 14, 2pm ET.">
+<style>
+  :root {
+    --navy: #0A1373;
+    --navy-2: #13208C;
+    --ink: #0A1628;
+    --blue: #29A3FF;
+    --blue-dark: #1489E6;
+    --text: #4A5568;
+    --muted: #5A6068;
+    --light: #F6F6F4;
+    --light-2: #EEF1F4;
+    --white: #FFFFFF;
+    --radius: 6px;
+    --wrap: 1140px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { font-weight: 800; color: var(--ink); line-height: 1.15; margin: 0; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  .section { padding: 88px 0; }
+  .section-title {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--navy-2);
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: .01em;
+  }
+  .section-sub { text-align: center; color: var(--muted); margin: 10px auto 0; max-width: 640px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--blue);
+  }
+  .eyebrow::after { content: ""; width: 40px; height: 2px; background: var(--blue); }
+
+  /* Buttons */
+  .cta {
+    display: inline-flex; flex-direction: column; align-items: center; gap: 4px;
+    background: var(--blue); color: var(--white); text-decoration: none; border: 0; cursor: pointer;
+    padding: 16px 34px; border-radius: var(--radius);
+    font: 800 16px/1.2 Arial, Helvetica, sans-serif; letter-spacing: .04em; text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(41,163,255,.35);
+    transition: background .15s, transform .15s;
+  }
+  .cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .cta small { font-weight: 400; font-size: 13px; letter-spacing: 0; text-transform: none; opacity: .92; }
+  .cta-row { margin-top: 36px; }
+
+  /* Header */
+  .topbar { background: var(--navy); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .topbar .logo-flowline { height: 40px; width: auto; }
+  .topbar .logo-pim { height: 46px; width: auto; }
+  .topbar .partners { display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,.55); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
+
+  /* Hero */
+  .hero {
+    position: relative; color: var(--white);
+    background: #000 url("images/hero.jpg") center right / cover no-repeat;
+    padding: 96px 0 104px;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.72) 45%, rgba(0,0,0,.25) 100%);
+  }
+  .hero .wrap { position: relative; }
+  .hero-inner { max-width: 640px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(41,163,255,.6); background: rgba(41,163,255,.12);
+    color: var(--white); border-radius: 999px; padding: 8px 16px;
+    font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px rgba(41,163,255,.25); }
+  .hero h1 { color: var(--white); font-size: clamp(36px, 5.6vw, 64px); margin-top: 24px; letter-spacing: -.01em; }
+  .hero h1 em { display: block; color: var(--blue); font-style: italic; }
+  .hero .rule { width: 56px; height: 3px; background: var(--blue); margin: 28px 0 22px; }
+  .hero .when { font-size: 20px; font-weight: 800; color: var(--white); margin: 0 0 12px; }
+  .hero .when span { color: var(--blue); }
+  .hero p.lede { color: #C7CCD2; font-size: 17px; margin: 0; max-width: 560px; }
+
+  /* Stat band */
+  .stats { background: linear-gradient(180deg, var(--navy-2), var(--navy)); color: var(--white); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding-top: 34px; padding-bottom: 34px; text-align: center; }
+  .stat b { display: block; color: var(--blue); font-size: 30px; font-weight: 800; line-height: 1.1; }
+  .stat span { display: block; font-size: 13px; color: #C7CCD2; margin-top: 6px; }
+
+  /* Why attend */
+  .why { background: var(--light); }
+  .why .grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+  .why h2 { font-size: clamp(30px, 4vw, 44px); text-transform: uppercase; margin-top: 14px; }
+  .why h2 em { color: var(--blue); font-style: normal; display: block; }
+  .checks { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 18px; }
+  .checks li { display: grid; grid-template-columns: 26px 1fr; gap: 14px; }
+  .checks li::before {
+    content: ""; width: 26px; height: 26px; border-radius: 50%; margin-top: 1px;
+    background: var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='5 12.5 10 17 19 7.5'/%3E%3C/svg%3E") center / 15px no-repeat;
+  }
+  .checks strong { color: var(--ink); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pair figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 18px 40px rgba(10,22,40,.18); }
+  .pair img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+  .pair figcaption {
+    position: absolute; top: 12px; left: 12px; background: rgba(10,22,40,.85); color: var(--white);
+    font-size: 11px; font-weight: 800; letter-spacing: .16em; padding: 6px 10px; border-radius: 4px;
+  }
+  .pair figure:last-child figcaption { background: var(--blue); }
+  .pair-note { grid-column: 1 / -1; text-align: center; font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+
+  /* Takeaways */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .card {
+    background: var(--white); border: 1px solid #E2E6EC; border-radius: 10px; padding: 34px 28px;
+    box-shadow: 0 6px 20px rgba(10,22,40,.06); text-align: center;
+  }
+  .card .icon {
+    width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 20px;
+    background: rgba(41,163,255,.12); color: var(--blue); display: grid; place-items: center;
+  }
+  .card .icon svg { width: 32px; height: 32px; }
+  .card p { margin: 0; }
+  .card strong { color: var(--ink); }
+
+  /* Agenda */
+  .agenda { background: var(--light-2); }
+  .agenda .grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
+  .agenda h2 { font-size: clamp(30px, 4vw, 44px); text-transform: uppercase; color: var(--navy-2); margin-top: 14px; }
+  .agenda .intro { margin: 14px 0 0; }
+  .steps { list-style: none; counter-reset: s; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; }
+  .steps li::before {
+    content: counter(s); width: 34px; height: 34px; border-radius: 50%; background: var(--navy-2); color: var(--white);
+    font-weight: 800; font-size: 14px; display: grid; place-items: center;
+  }
+  .steps strong { color: var(--ink); }
+  .agenda .photo { border-radius: 10px; overflow: hidden; box-shadow: 0 18px 40px rgba(10,22,40,.18); position: relative; }
+  .agenda .photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .agenda .photo span {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 16px; color: var(--white); font-weight: 700; font-size: 14px;
+    background: linear-gradient(transparent, rgba(10,22,40,.85));
+  }
+
+  /* Before / after gallery */
+  .ba { max-width: 460px; margin: 44px auto 0; }
+  .ba-frame {
+    position: relative; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; user-select: none;
+    box-shadow: 0 18px 40px rgba(10,22,40,.2); background: #ddd; touch-action: none;
+  }
+  .ba-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ba-frame .after { clip-path: inset(0 0 0 50%); }
+  .ba-frame .handle {
+    position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--white); transform: translateX(-1px); pointer-events: none;
+  }
+  .ba-frame .handle::after {
+    content: ""; position: absolute; top: 50%; left: 50%; width: 42px; height: 42px; transform: translate(-50%, -50%);
+    border-radius: 50%; background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpolyline points='14,24 20,17 20,31' fill='%23333'/%3E%3Cpolyline points='34,24 28,17 28,31' fill='%23333'/%3E%3C/svg%3E") center / 34px no-repeat;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
+  }
+  .ba-frame .tag {
+    position: absolute; top: 14px; font-size: 11px; font-weight: 800; letter-spacing: .16em; color: var(--white);
+    background: rgba(10,22,40,.85); padding: 6px 10px; border-radius: 4px; pointer-events: none;
+  }
+  .ba-frame .tag.l { left: 14px; }
+  .ba-frame .tag.r { right: 14px; background: var(--blue); }
+  .ba-frame input[type=range] {
+    position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize;
+  }
+  .ba-label { text-align: center; font-weight: 700; color: var(--ink); margin: 18px 0 0; font-size: 18px; }
+  .ba-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+  .ba-tabs button {
+    font: 700 13px Arial, Helvetica, sans-serif; color: var(--navy-2); background: var(--white);
+    border: 1px solid #D3DAE3; border-radius: 999px; padding: 8px 14px; cursor: pointer;
+  }
+  .ba-tabs button[aria-pressed="true"] { background: var(--navy-2); border-color: var(--navy-2); color: var(--white); }
+
+  /* Presenter */
+  .presenter { background: var(--light); }
+  .person {
+    max-width: 760px; margin: 44px auto 0; background: var(--white); border-radius: 12px; overflow: hidden;
+    display: grid; grid-template-columns: 260px 1fr; box-shadow: 0 10px 30px rgba(10,22,40,.08); border: 1px solid #E2E6EC;
+  }
+  .headshot {
+    background: repeating-linear-gradient(45deg, #E8EDF3 0 12px, #F1F4F8 12px 24px);
+    display: grid; place-items: center; min-height: 280px; color: #8A94A3; font-size: 13px; text-align: center;
+  }
+  .headshot svg { width: 72px; height: 72px; margin: 0 auto 8px; opacity: .6; }
+  .person .info { padding: 40px; align-self: center; }
+  .person h3 { font-size: 28px; }
+  .person .role { color: var(--blue); font-weight: 700; margin: 6px 0 16px; }
+  .person p { margin: 0; }
+
+  /* Testimonials */
+  .quotes { background: linear-gradient(135deg, #36B3F5, #1C9BE0); }
+  .quotes .section-title { color: var(--navy); }
+  .quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 44px; }
+  .quote { color: var(--white); }
+  .quote::before { content: "\201C"; display: block; font: 800 56px/0.8 Georgia, serif; color: rgba(255,255,255,.7); margin-bottom: 10px; }
+  .quote p { margin: 0 0 14px; font-size: 16px; }
+  .quote cite { font-style: normal; font-weight: 800; font-size: 13px; color: var(--navy); }
+
+  /* Final CTA */
+  .final { background: var(--navy); color: var(--white); text-align: center; }
+  .final h2 { color: var(--white); font-size: clamp(30px, 4.4vw, 46px); text-transform: uppercase; }
+  .final h2 em { color: var(--blue); font-style: italic; }
+  .final p { color: #C7CCD2; max-width: 680px; margin: 18px auto 0; font-size: 17px; }
+
+  /* Footer */
+  footer { background: #070E52; color: rgba(255,255,255,.6); font-size: 13px; }
+  footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 28px; padding-bottom: 28px; flex-wrap: wrap; }
+  footer .logos { display: flex; align-items: center; gap: 24px; }
+  footer .logos img:first-child { height: 30px; }
+  footer .logos img:last-child { height: 36px; }
+
+  /* Modal */
+  .modal { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; padding: 16px; background: rgba(10,22,40,.7); }
+  .modal.open { display: flex; }
+  .dialog { background: var(--white); border-radius: 12px; width: 100%; max-width: 480px; padding: 36px 32px 32px; position: relative; max-height: 100%; overflow: auto; }
+  .dialog h3 { font-size: 22px; color: var(--navy-2); text-transform: uppercase; }
+  .dialog p { font-size: 14px; margin: 10px 0 20px; }
+  .dialog .close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: 0; background: var(--light-2); border-radius: 50%; font-size: 20px; cursor: pointer; color: var(--ink); }
+  .dialog label { display: block; font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .dialog input { width: 100%; padding: 12px 14px; border: 1px solid #D3DAE3; border-radius: var(--radius); font: 15px Arial, Helvetica, sans-serif; margin-bottom: 14px; }
+  .dialog input:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
+  .dialog .cta { width: 100%; margin-top: 6px; }
+  .dialog .note { font-size: 12px; color: var(--muted); margin: 12px 0 0; text-align: center; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stats .wrap { grid-template-columns: repeat(3, 1fr); row-gap: 24px; }
+    .why .grid, .agenda .grid { grid-template-columns: 1fr; gap: 44px; }
+    .cards, .quote-grid { grid-template-columns: 1fr; }
+    .person { grid-template-columns: 1fr; }
+    .headshot { min-height: 220px; }
+  }
+  @media (max-width: 600px) {
+    .section { padding: 64px 0; }
+    .wrap { padding: 0 16px; }
+    .topbar .wrap { height: 64px; }
+    .topbar .logo-flowline { height: 30px; }
+    .topbar .logo-pim { height: 36px; }
+    .topbar .partners span { display: none; }
+    .hero { padding: 64px 0 72px; background-position: 70% center; }
+    .hero::before { background: rgba(0,0,0,.72); }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+    .stats .stat:last-child { grid-column: 1 / -1; }
+    .cta { width: 100%; padding: 16px 20px; }
+    .person .info { padding: 28px 24px; }
+    footer .wrap { justify-content: center; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. Header -->
+<header class="topbar">
+  <div class="wrap">
+    <img class="logo-flowline" src="images/flowline-logo.png" alt="Precision Flowline">
+    <div class="partners"><span>In partnership with</span><img class="logo-pim" src="images/pim-logo-white.png" alt="PIM - Precision Infrastructure Management"></div>
+  </div>
+</header>
+
+<!-- 2. Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="badge"><span class="dot"></span>Encore Presentation · As Seen at PWX 2026 Houston</span>
+      <h1>Missed It at PWX Houston? <em>Eliminate Ponding in Hours, Not Weeks.</em></h1>
+      <div class="rule"></div>
+      <p class="when">Live Webinar – <span>Wednesday, October 14, 2pm ET</span></p>
+      <p class="lede">One of the most attended sessions at PWX 2026 is back, live and online. See how municipalities are eliminating roadway and accessible-route ponding at 65–85% less than traditional replacement, without engineering redesign, long construction timelines, or major traffic control.</p>
+      <div class="cta-row">
+        <button class="cta" data-open>Register for the Webinar Now!<small>Spots are limited. Only 19 remaining!</small></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2b. Stat band -->
+<section class="stats" aria-label="Key results">
+  <div class="wrap">
+    <div class="stat"><b>65–85%</b><span>Cost Savings vs Replacement</span></div>
+    <div class="stat"><b>HOURS</b><span>Not Days or Weeks</span></div>
+    <div class="stat"><b>86%</b><span>Of Analyzed Sites Feasible</span></div>
+    <div class="stat"><b>98%</b><span>First-Pass Success Rate</span></div>
+    <div class="stat"><b>50–70%</b><span>Traffic Control Savings</span></div>
+  </div>
+</section>
+
+<!-- 3. Why Attend -->
+<section class="section why">
+  <div class="wrap grid">
+    <div class="pair">
+      <figure><img src="images/across-road-before-new.jpg" alt="Water ponding across a residential cul-de-sac before repair"><figcaption>BEFORE</figcaption></figure>
+      <figure><img src="images/across-road-after-new.jpg" alt="The same cul-de-sac draining properly after a Precision Flowline repair"><figcaption>AFTER</figcaption></figure>
+      <p class="pair-note">Across a cul-de-sac: ponding eliminated in hours.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Why Attend</span>
+      <h2>The Session Everyone <em>Was Talking About</em></h2>
+      <ul class="checks">
+        <li><div><strong>Catch the Encore</strong> – This presentation drew one of the biggest crowds at PWX 2026 in Houston. If you couldn't make it, this is your chance to see it live and ask questions.</div></li>
+        <li><div><strong>A Faster, Cheaper Fix</strong> – Precision Flowline repairs over 86% of street ponding issues in hours, saving millions compared to traditional methods.</div></li>
+        <li><div><strong>Beyond Curb &amp; Gutter</strong> – See real repairs on ADA ramps, pedestrian access routes, driveway bevels, valley gutters, cul-de-sacs, intersections, and drainage flumes.</div></li>
+        <li><div><strong>Proven Results</strong> – A 98% first-pass success rate with no additional modifications, and a 100% field success rate.</div></li>
+      </ul>
+      <div class="cta-row">
+        <button class="cta" data-open>Claim Your Spot at the Webinar!<small>This exclusive live webinar is almost full!</small></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Key Takeaways -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Key Takeaways</h2>
+    <p class="section-sub">What you'll walk away with in under an hour.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <p>Discover how to cut ponding repair costs by <strong>65–85%</strong> and traffic control costs by <strong>50–70%</strong>.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <p>Understand why <strong>programmatic deployment</strong>, not one-off repairs, is the bigger opportunity.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1.6"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg></div>
+        <p>Learn how to restore <strong>accessible routes</strong> and keep standing water off ADA ramps and landings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Agenda -->
+<section class="section agenda">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Webinar Agenda</span>
+      <h2>What We'll Cover</h2>
+      <p class="intro">The same session that packed the room at PWX Houston, in a tight 55 minutes you can watch without leaving your desk.</p>
+      <ol class="steps">
+        <li><div><strong>Welcome &amp; Introductions</strong> – Why street ponding is more than a nuisance.</div></li>
+        <li><div><strong>The Real Cost of Ponding</strong> – Advanced degradation, accessibility barriers, hydroplaning, public complaints, and lower property values.</div></li>
+        <li><div><strong>Why Traditional Fixes Fall Short</strong> – Mill &amp; fill, replacement, and mud jacking cost $75–$200 per linear foot, and often just relocate the problem.</div></li>
+        <li><div><strong>The Precision Flowline Method</strong> – Pre-feasibility, topography analysis, repair, and flow testing.</div></li>
+        <li><div><strong>Case Study Spotlight</strong> – Before-and-after results on roadways, cul-de-sacs, intersections, and pedestrian access routes.</div></li>
+        <li><div><strong>Building a Program</strong> – Find drainage problems during resurfacing, ADA, and right-of-way assessments, before complaints arrive.</div></li>
+        <li><div><strong>Q&amp;A</strong> – Live audience questions answered by our expert.</div></li>
+      </ol>
+      <div class="cta-row">
+        <button class="cta" data-open>Lock In Your Spot</button>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="images/par-before-new.jpg" alt="Standing water blocking a pedestrian access route">
+      <span>Ponding on a pedestrian access route, one of the repair types covered in the session.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 5b. Before & After gallery -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">See the Difference</h2>
+    <p class="section-sub">From ponding to positive drainage. Drag the slider to compare before and after.</p>
+    <div class="ba">
+      <div class="ba-frame" id="ba">
+        <img class="before" alt="" src="images/across-road-before-new.jpg">
+        <img class="after" alt="" src="images/across-road-after-new.jpg">
+        <div class="handle"></div>
+        <span class="tag l">BEFORE</span><span class="tag r">AFTER</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+      </div>
+      <p class="ba-label" id="ba-label">Across a Cul-de-sac</p>
+      <div class="ba-tabs" id="ba-tabs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Presenter -->
+<section class="section presenter">
+  <div class="wrap">
+    <h2 class="section-title">Meet Your Presenter</h2>
+    <div class="person">
+      <div class="headshot">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Headshot coming soon
+        </div>
+      </div>
+      <div class="info">
+        <h3>Aaron Hester</h3>
+        <p class="role">Managing Partner, Precision Flowline</p>
+        <p>Aaron presented the Precision Flowline methodology for mitigating roadway and accessible-route ponding to a packed room at PWX 2026 in Houston. In this encore, he'll walk through the same field results and case studies, then take your questions live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6b. Testimonials -->
+<section class="section quotes">
+  <div class="wrap">
+    <h2 class="section-title">Trusted by Municipalities Across the US</h2>
+    <div class="quote-grid">
+      <div class="quote"><p>Our city engineers inspected the results and said it was some of the best work they'd seen from a private contractor.</p><cite>City Engineer</cite></div>
+      <div class="quote"><p>Our traditional cost for this work is significantly greater than what you are proposing. This process will eliminate very costly sidewalk and street repairs.</p><cite>Assistant Public Works Director</cite></div>
+      <div class="quote"><p>This process will eliminate many of the public complaints we get now after street re-paving projects.</p><cite>DOT Deputy Director of Street Maintenance</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Final CTA -->
+<section class="section final">
+  <div class="wrap">
+    <h2>Missed PWX? <em>Don't Miss This.</em></h2>
+    <p>Don't wait for ponding complaints. Learn how to find drainage problems early, confirm which ones can be fixed, and correct them before they turn into expensive infrastructure failures.</p>
+    <div class="cta-row">
+      <button class="cta" data-open>Register for the Webinar Now!<small>Spots are limited. Only 19 remaining!</small></button>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Footer -->
+<footer>
+  <div class="wrap">
+    <div class="logos">
+      <img src="images/flowline-logo.png" alt="Precision Flowline">
+      <img src="images/pim-logo-white.png" alt="PIM - Precision Infrastructure Management">
+    </div>
+    <div>Copyright 2026. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Registration popup (replace with the GoHighLevel form when building in GHL) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="dialog">
+    <button class="close" data-close aria-label="Close">×</button>
+    <h3 id="modal-title">Reserve Your Seat</h3>
+    <p>Provide your information in the following form and we will send you reminders with the official Zoom link for the webinar! Fields marked with an asterisk (*) are required.</p>
+    <form id="reg">
+      <label for="f-name">Full Name *</label>
+      <input id="f-name" name="full_name" placeholder="Full Name" required>
+      <label for="f-org">Organization *</label>
+      <input id="f-org" name="organization" placeholder="Organization" required>
+      <label for="f-phone">Direct Phone *</label>
+      <input id="f-phone" name="phone" type="tel" placeholder="Direct Phone" required>
+      <label for="f-email">Email *</label>
+      <input id="f-email" name="email" type="email" placeholder="Email" required>
+      <button class="cta" type="submit">Submit</button>
+      <p class="note" id="reg-note">Preview only. This form does not submit anywhere.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Modal
+  const modal = document.getElementById('modal');
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => {
+    modal.classList.add('open'); document.getElementById('f-name').focus();
+  }));
+  const close = () => modal.classList.remove('open');
+  document.querySelector('[data-close]').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  document.getElementById('reg').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('reg-note').textContent = 'Preview only. In GoHighLevel this will be the live registration form.';
+  });
+
+  // Before / after slider
+  const pairs = [
+    ['Across a Cul-de-sac', 'across-road-before-new', 'across-road-after-new'],
+    ['Asphalt to Curb', 'asphalt-to-curb-beforenew', 'asphalt-to-curb-afternew'],
+    ['Concrete Curb & Gutter', 'concrete-curb-before-new', 'concrete-curb-to-gutter-after'],
+    ['Driveway', 'driveway-before-new', 'driveway-after-new'],
+    ['Concrete Gutter Pans', 'concrete-gutter-pans-before', 'concrete-gutter-pans-after'],
+    ['Pedestrian Access Route', 'par-before-new', 'par-after-new'],
+  ];
+  const ba = document.getElementById('ba');
+  const range = ba.querySelector('input');
+  const before = ba.querySelector('.before'), after = ba.querySelector('.after'), handle = ba.querySelector('.handle');
+  const label = document.getElementById('ba-label'), tabs = document.getElementById('ba-tabs');
+  const setPos = v => { after.style.clipPath = `inset(0 0 0 ${v}%)`; handle.style.left = v + '%'; };
+  range.addEventListener('input', () => setPos(range.value));
+  pairs.forEach(([name, b, a], i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.textContent = name; btn.setAttribute('aria-pressed', i === 0);
+    btn.addEventListener('click', () => {
+      before.src = `images/${b}.jpg`; after.src = `images/${a}.jpg`; label.textContent = name;
+      before.alt = `${name}: ponding before repair`; after.alt = `${name}: draining after repair`;
+      range.value = 50; setPos(50);
+      tabs.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === btn));
+    });
+    tabs.appendChild(btn);
+  });
+  before.alt = 'Across a Cul-de-sac: ponding before repair'; after.alt = 'Across a Cul-de-sac: draining after repair';
+</script>
+</body>
+</html>
