@@ -66,8 +66,6 @@
   .topbar { background: var(--navy); }
   .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
   .topbar .logo-flowline { height: 40px; width: auto; }
-  .topbar .logo-pim { height: 46px; width: auto; }
-  .topbar .partners { display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,.55); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
 
   /* Hero */
   .hero {
@@ -224,8 +222,7 @@
   footer { background: #070E52; color: rgba(255,255,255,.6); font-size: 13px; }
   footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 28px; padding-bottom: 28px; flex-wrap: wrap; }
   footer .logos { display: flex; align-items: center; gap: 24px; }
-  footer .logos img:first-child { height: 30px; }
-  footer .logos img:last-child { height: 36px; }
+  footer .logos img { height: 30px; }
 
   /* Modal */
   .modal { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; padding: 16px; background: rgba(10,22,40,.7); }
@@ -253,8 +250,6 @@
     .wrap { padding: 0 16px; }
     .topbar .wrap { height: 64px; }
     .topbar .logo-flowline { height: 30px; }
-    .topbar .logo-pim { height: 36px; }
-    .topbar .partners span { display: none; }
     .hero { padding: 64px 0 72px; background-position: 70% center; }
     .hero::before { background: rgba(0,0,0,.72); }
     .stats .wrap { grid-template-columns: repeat(2, 1fr); }
@@ -271,7 +266,6 @@
 <header class="topbar">
   <div class="wrap">
     <img class="logo-flowline" src="images/flowline-logo.png" alt="Precision Flowline">
-    <div class="partners"><span>In partnership with</span><img class="logo-pim" src="images/pim-logo-white.png" alt="PIM - Precision Infrastructure Management"></div>
   </div>
 </header>
 
@@ -442,7 +436,6 @@
   <div class="wrap">
     <div class="logos">
       <img src="images/flowline-logo.png" alt="Precision Flowline">
-      <img src="images/pim-logo-white.png" alt="PIM - Precision Infrastructure Management">
     </div>
     <div>Copyright 2026. All rights reserved.</div>
   </div>

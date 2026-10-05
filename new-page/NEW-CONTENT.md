@@ -11,7 +11,7 @@ Items marked **[TBD]** still need your input.
 ---
 
 ### 1. Header bar
-- Precision Flowline logo (`../precision-flowline-logo.png`) on the left and PIM logo on the right, on navy `#0A1373`.
+- Precision Flowline logo only (`../precision-flowline-logo.png`), on navy `#0A1373`. No PIM branding.
 
 ### 2. Hero
 - Background: `flowline-site/background-image54.jpg` (car splashing through street ponding, same as the Flowline site hero) with a dark overlay.
@@ -78,7 +78,7 @@ Matches the Flowline site's "See the Difference" section. Pairs available in `fl
 - **CTA:** REGISTER FOR THE WEBINAR NOW! / *Spots are limited. Only 19 remaining!*
 
 ### 8. Footer
-- Precision Flowline and PIM logos, "Copyright 2026. All rights reserved"
+- Precision Flowline logo, "Copyright 2026. All rights reserved"
 
 ### Page title / popup
 - **Page title:** `Webinar: Precision Flowline Encore from PWX Houston`
