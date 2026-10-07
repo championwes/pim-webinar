@@ -235,7 +235,11 @@
   .dialog input { width: 100%; padding: 12px 14px; border: 1px solid #D3DAE3; border-radius: var(--radius); font: 15px Arial, Helvetica, sans-serif; margin-bottom: 14px; }
   .dialog input:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
   .dialog .cta { width: 100%; margin-top: 6px; }
-  .dialog .note { font-size: 12px; color: var(--muted); margin: 12px 0 0; text-align: center; }
+  .dialog .note { font-size: 13px; color: var(--muted); margin: 12px 0 0; text-align: center; }
+  .dialog .note:empty { display: none; }
+  .dialog .note.error { color: #C0392B; }
+  .dialog .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .dialog .cta:disabled { opacity: .6; cursor: wait; transform: none; }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -441,7 +445,7 @@
   </div>
 </footer>
 
-<!-- Registration popup (replace with the GoHighLevel form when building in GHL) -->
+<!-- Registration popup: submissions go to the Google Sheet via the Apps Script web app (apps-script/Code.gs) -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="dialog">
     <button class="close" data-close aria-label="Close">×</button>
@@ -456,9 +460,15 @@
       <input id="f-phone" name="phone" type="tel" placeholder="Direct Phone" required>
       <label for="f-email">Email *</label>
       <input id="f-email" name="email" type="email" placeholder="Email" required>
-      <button class="cta" type="submit">Submit</button>
-      <p class="note" id="reg-note">Preview only. This form does not submit anywhere.</p>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="cta" type="submit" id="reg-submit">Submit</button>
+      <p class="note" id="reg-note" role="status"></p>
     </form>
+    <div class="thanks" id="reg-thanks" hidden>
+      <h3>You're Registered!</h3>
+      <p>Thanks for signing up. We'll email you reminders with the official Zoom link before the webinar on Wednesday, October 14 at 2pm ET.</p>
+      <button class="cta" type="button" data-close>Close</button>
+    </div>
   </div>
 </div>
 
@@ -469,12 +479,35 @@
     modal.classList.add('open'); document.getElementById('f-name').focus();
   }));
   const close = () => modal.classList.remove('open');
-  document.querySelector('[data-close]').addEventListener('click', close);
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', close));
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-  document.getElementById('reg').addEventListener('submit', e => {
+  // Registration: posts to the Apps Script web app, which appends a row to the Google Sheet.
+  const REGISTRATION_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzZyAy_pSZMd8z-nR4LS7LGtAYrmHZ5VpSlODgp6ny2s2OjxZLrhTjz3QzYJE6mbieShQ/exec';
+  const form = document.getElementById('reg');
+  const note = document.getElementById('reg-note');
+  const submitBtn = document.getElementById('reg-submit');
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    document.getElementById('reg-note').textContent = 'Preview only. In GoHighLevel this will be the live registration form.';
+    note.className = 'note'; note.textContent = '';
+    if (!REGISTRATION_ENDPOINT) {
+      note.textContent = 'Registration is not connected yet.';
+      return;
+    }
+    const data = new URLSearchParams(new FormData(form));
+    data.set('page_url', location.href);
+    submitBtn.disabled = true; submitBtn.textContent = 'Submitting...';
+    try {
+      // Apps Script doesn't send CORS headers, so the response can't be read; a network error still throws.
+      await fetch(REGISTRATION_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data });
+      form.hidden = true;
+      document.getElementById('reg-thanks').hidden = false;
+    } catch (err) {
+      note.className = 'note error';
+      note.textContent = 'Something went wrong. Please try again.';
+    } finally {
+      submitBtn.disabled = false; submitBtn.textContent = 'Submit';
+    }
   });
 
   // Before / after slider
