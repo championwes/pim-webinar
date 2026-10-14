@@ -19,7 +19,7 @@ Items marked **[TBD]** still need your input.
 - **H1** (Flowline style: first line white, the rest italic bright blue):
   Missed It at PWX Houston?
   *Eliminate Ponding in Hours, Not Weeks.*
-- **Subhead:** Live Webinar – Wednesday, October 14, 2pm ET
+- **Subhead:** Live Webinar – Wednesday, October 21, 2pm ET
 - **Body:** One of the most attended sessions at PWX 2026 is back, live and online. See how municipalities are eliminating roadway and accessible-route ponding at 65–85% less than traditional replacement, without engineering redesign, long construction timelines, or major traffic control.
 - **CTA:** REGISTER FOR THE WEBINAR NOW! / *Spots are limited. Only 19 remaining!*
 
